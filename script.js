@@ -1,327 +1,77 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+const scenes = [
+  document.getElementById("scene1"),
+  document.getElementById("scene2"),
+  document.getElementById("scene3"),
+  document.getElementById("scene4"),
+  document.getElementById("scene5"),
+  document.getElementById("scene6"),
+  document.getElementById("scene7"),
+  document.getElementById("scene8")
+];
 
-body.game{
-background:#090611;
-overflow:hidden;
-font-family:'Poppins',sans-serif;
-color:white;
-height:100vh;
-}
+let current = 0;
 
-/* Fondo */
+function showScene(index){
 
-.sky{
-position:fixed;
-width:100%;
-height:100%;
-background:linear-gradient(#070513,#13082d,#090611);
-overflow:hidden;
-}
+    scenes.forEach(scene=>{
+        scene.classList.remove("active");
+    });
 
-/* Estrellas */
-
-.stars{
-position:absolute;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px,transparent 1px);
-background-size:30px 30px;
-opacity:.45;
-animation:starsMove 40s linear infinite;
-}
-
-@keyframes starsMove{
-
-from{
-transform:translateY(0);
-}
-
-to{
-transform:translateY(400px);
-}
+    scenes[index].classList.add("active");
 
 }
 
-/* Luna */
+const startButton = document.getElementById("startGame");
 
-.moon{
+startButton.onclick = ()=>{
 
-position:absolute;
+    current=1;
 
-right:80px;
+    showScene(current);
 
-top:60px;
+    setTimeout(()=>{
 
-width:120px;
+        current=2;
+        showScene(current);
 
-height:120px;
+    },3500);
 
-border-radius:50%;
+    setTimeout(()=>{
 
-background:#fff8c6;
+        current=3;
+        showScene(current);
 
-box-shadow:0 0 45px #fff3a0;
+    },7000);
 
-}
+    setTimeout(()=>{
 
-/* Ciudad */
+        current=4;
+        showScene(current);
 
-.city{
+    },10000);
 
-position:absolute;
+    setTimeout(()=>{
 
-bottom:0;
+        current=5;
+        showScene(current);
 
-width:100%;
+    },14500);
 
-height:220px;
+    setTimeout(()=>{
 
-display:flex;
+        current=6;
+        showScene(current);
 
-align-items:flex-end;
-
-justify-content:space-evenly;
-
-}
-
-.building{
-
-background:#111;
-
-border-top:4px solid #ff2d7a;
-
-box-shadow:0 0 15px #ff2d7a;
+    },18500);
 
 }
 
-.b1{
+const gift=document.querySelector(".gift");
 
-width:80px;
-height:180px;
+gift.onclick=()=>{
 
-}
+    current=7;
 
-.b2{
-
-width:120px;
-height:140px;
-
-}
-
-.b3{
-
-width:90px;
-height:210px;
-
-}
-
-.b4{
-
-width:150px;
-height:170px;
-
-}
-
-.b5{
-
-width:100px;
-height:200px;
-
-}
-
-/* Ventanas */
-
-.building::before{
-
-content:"";
-
-display:block;
-
-margin:10px auto;
-
-width:60%;
-
-height:80%;
-
-background:
-
-repeating-linear-gradient(
-
-to bottom,
-
-#ffd93d 0 8px,
-
-transparent 8px 16px
-
-);
-
-opacity:.8;
-
-}
-
-/* Personaje */
-
-#hero{
-
-position:absolute;
-
-bottom:210px;
-
-left:-80px;
-
-font-size:50px;
-
-animation:walk 12s linear infinite;
-
-filter:drop-shadow(0 0 12px #ff2d7a);
-
-}
-
-@keyframes walk{
-
-0%{
-
-left:-80px;
-
-}
-
-100%{
-
-left:110%;
-
-}
-
-}
-
-/* Escenas */
-
-.scene{
-
-position:absolute;
-
-width:100%;
-
-height:100vh;
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-text-align:center;
-
-padding:20px;
-
-}
-
-.active{
-
-display:flex;
-
-animation:fade .8s;
-
-}
-
-.scene h1{
-
-font-family:'Press Start 2P',cursive;
-
-font-size:38px;
-
-line-height:60px;
-
-text-shadow:0 0 20px #ff2d7a;
-
-}
-
-.scene h2{
-
-margin-top:20px;
-
-font-size:40px;
-
-}
-
-.scene p{
-
-margin-top:20px;
-
-font-size:22px;
-
-max-width:700px;
-
-}
-
-button{
-
-margin-top:40px;
-
-padding:18px 45px;
-
-font-size:18px;
-
-background:#ff2d7a;
-
-color:white;
-
-border:none;
-
-border-radius:40px;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-.gift{
-
-font-size:90px;
-
-animation:bounce 1.5s infinite;
-
-cursor:pointer;
-
-}
-
-@keyframes bounce{
-
-50%{
-
-transform:translateY(-18px);
-
-}
-
-}
-
-@keyframes fade{
-
-from{
-
-opacity:0;
-transform:scale(.95);
-
-}
-
-to{
-
-opacity:1;
-transform:scale(1);
-
-}
+    showScene(current);
 
 }
