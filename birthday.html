@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Earth-18</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body class="birthday">
+
+<div class="city"></div>
+
+<div class="particles"></div>
+
+<section class="hero2">
+
+<h1 class="pixel">
+
+🎂
+
+</h1>
+
+<h2>
+
+Feliz Cumpleaños
+
+</h2>
+
+<h1 class="name">
+
+Alexa
+
+</h1>
+
+<p class="subtitle">
+
+Bienvenida a Earth-18
+
+</p>
+
+<button id="next">
+
+Continuar →
+
+</button>
+
+</section>
+
+<section id="scene2" class="hidden">
+
+<h2 class="big">
+
+Existen millones de universos...
+
+</h2>
+
+</section>
+
+<section id="scene3" class="hidden">
+
+<h2 class="big">
+
+Cada uno cuenta una historia diferente...
+
+</h2>
+
+</section>
+
+<section id="scene4" class="hidden">
+
+<h2 class="love">
+
+Pero hay algo...
+
+que nunca cambia.
+
+</h2>
+
+</section>
+
+<section id="scene5" class="hidden">
+
+<h1 class="loveFinal">
+
+❤️
+
+</h1>
+
+<h2>
+
+Te amo
+
+</h2>
+
+<h2>
+
+en todos
+
+</h2>
+
+<h2>
+
+los universos.
+
+</h2>
+
+<button id="continue2">
+
+Continuar
+
+</button>
+
+</section>
+
+<script>
+
+const next=document.getElementById("next");
+
+const continue2=document.getElementById("continue2");
+
+next.onclick=()=>{
+
+document.querySelector(".hero2").style.display="none";
+
+document.getElementById("scene2").style.display="flex";
+
+setTimeout(()=>{
+
+scene2.style.display="none";
+
+scene3.style.display="flex";
+
+},3500);
+
+setTimeout(()=>{
+
+scene3.style.display="none";
+
+scene4.style.display="flex";
+
+},7000);
+
+setTimeout(()=>{
+
+scene4.style.display="none";
+
+scene5.style.display="flex";
+
+},10500);
+
+}
+
+continue2.onclick=()=>{
+
+alert("Aquí comenzará la siguiente aventura 🚀");
+
+}
+
+</script>
+
+</body>
+
+</html>
