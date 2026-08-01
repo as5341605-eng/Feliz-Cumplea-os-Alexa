@@ -1,93 +1,121 @@
-body{
+*{
 margin:0;
 padding:0;
-font-family:'Poppins',sans-serif;
-background:linear-gradient(180deg,#050816,#111827,#000);
-color:white;
-overflow-x:hidden;
+box-sizing:border-box;
 }
 
-.hero,
-#story,
-#end{
-min-height:100vh;
+body{
+background:#050816;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+color:white;
+height:100vh;
+}
+
+#intro{
+position:absolute;
+width:100%;
+height:100%;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-padding:30px;
-text-align:center;
+background:linear-gradient(180deg,#000,#050816);
+z-index:100;
 }
 
-.hero h1{
-font-size:80px;
-margin:0;
-animation:float 3s infinite;
-}
-
-.hero h2{
-font-size:35px;
-margin-top:10px;
-}
-
-.hero p{
-max-width:700px;
+#boot{
+font-family:'Press Start 2P',cursive;
 font-size:20px;
-opacity:.9;
+text-align:center;
+line-height:45px;
+color:#00ffea;
+text-shadow:0 0 15px #00ffea;
+padding:20px;
 }
 
-button{
-padding:15px 40px;
+#enter{
+margin-top:60px;
+padding:18px 55px;
 border:none;
-border-radius:40px;
-background:#e11d48;
+border-radius:50px;
+background:linear-gradient(90deg,#ff004c,#7c3aed);
 color:white;
-font-size:18px;
+font-size:20px;
 cursor:pointer;
-margin-top:30px;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-background:#ff2b63;
-}
-
-.hidden{
 display:none;
+transition:.35s;
+box-shadow:0 0 30px rgba(255,0,80,.5);
 }
 
-.letter{
-max-width:800px;
-background:rgba(255,255,255,.08);
-padding:30px;
-border-radius:20px;
-backdrop-filter:blur(10px);
-line-height:2;
-font-size:18px;
+#enter:hover{
+transform:scale(1.08);
+box-shadow:0 0 45px rgba(255,0,80,.8);
 }
 
-#end h2{
-font-size:42px;
-}
-
-#end h3{
-font-size:28px;
-color:#ff4f7a;
-}
-
-.overlay{
-position:fixed;
+#stars{
+position:absolute;
 width:100%;
 height:100%;
-background-image:radial-gradient(white 1px,transparent 1px);
+background-image:
+radial-gradient(white 1px,transparent 1px);
 background-size:40px 40px;
-opacity:.12;
-pointer-events:none;
+animation:moveStars 25s linear infinite;
+opacity:.35;
 }
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
+@keyframes moveStars{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(500px);
+
+}
+
+}
+
+.glitch{
+
+animation:glitch .3s infinite;
+
+}
+
+@keyframes glitch{
+
+0%{
+
+transform:translateX(0);
+
+}
+
+25%{
+
+transform:translateX(2px);
+
+}
+
+50%{
+
+transform:translateX(-2px);
+
+}
+
+75%{
+
+transform:translateX(1px);
+
+}
+
+100%{
+
+transform:translateX(0);
+
+}
+
 }
