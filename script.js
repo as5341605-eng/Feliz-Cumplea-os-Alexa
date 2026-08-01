@@ -1,121 +1,62 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+const boot=document.getElementById("boot");
+const enter=document.getElementById("enter");
 
-body{
-background:#050816;
-overflow:hidden;
-font-family:'Poppins',sans-serif;
-color:white;
-height:100vh;
-}
+const messages=[
 
-#intro{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-background:linear-gradient(180deg,#000,#050816);
-z-index:100;
-}
+"INITIALIZING...",
 
-#boot{
-font-family:'Press Start 2P',cursive;
-font-size:20px;
-text-align:center;
-line-height:45px;
-color:#00ffea;
-text-shadow:0 0 15px #00ffea;
-padding:20px;
-}
+"CONNECTING MULTIVERSE...",
 
-#enter{
-margin-top:60px;
-padding:18px 55px;
-border:none;
-border-radius:50px;
-background:linear-gradient(90deg,#ff004c,#7c3aed);
-color:white;
-font-size:20px;
-cursor:pointer;
-display:none;
-transition:.35s;
-box-shadow:0 0 30px rgba(255,0,80,.5);
-}
+"SEARCHING EARTH...",
 
-#enter:hover{
-transform:scale(1.08);
-box-shadow:0 0 45px rgba(255,0,80,.8);
-}
+"EARTH - 18 FOUND"
 
-#stars{
-position:absolute;
-width:100%;
-height:100%;
-background-image:
-radial-gradient(white 1px,transparent 1px);
-background-size:40px 40px;
-animation:moveStars 25s linear infinite;
-opacity:.35;
-}
+];
 
-@keyframes moveStars{
+let index=0;
 
-from{
+function showMessage(){
 
-transform:translateY(0);
+if(index<messages.length){
 
-}
+boot.innerHTML=messages[index];
 
-to{
+boot.classList.add("glitch");
 
-transform:translateY(500px);
+setTimeout(()=>{
+
+boot.classList.remove("glitch");
+
+index++;
+
+setTimeout(showMessage,1200);
+
+},500);
+
+}else{
+
+enter.style.display="block";
 
 }
 
 }
 
-.glitch{
+showMessage();
 
-animation:glitch .3s infinite;
+enter.onclick=()=>{
 
-}
+document.body.style.transition="1s";
 
-@keyframes glitch{
+document.body.style.background="#000";
 
-0%{
+boot.innerHTML="Opening Portal...";
 
-transform:translateX(0);
+enter.style.display="none";
 
-}
+setTimeout(()=>{
 
-25%{
+window.location.href="birthday.html";
 
-transform:translateX(2px);
-
-}
-
-50%{
-
-transform:translateX(-2px);
-
-}
-
-75%{
-
-transform:translateX(1px);
-
-}
-
-100%{
-
-transform:translateX(0);
-
-}
+},2500);
 
 }
