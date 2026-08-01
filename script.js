@@ -65,13 +65,46 @@ startButton.onclick = ()=>{
     },18500);
 
 }
+const giftBtn = document.getElementById("giftBtn");
 
-const gift=document.querySelector(".gift");
+giftBtn.onclick = ()=>{
 
-gift.onclick=()=>{
+    fireworks();
 
-    current=7;
+    setTimeout(()=>{
 
-    showScene(current);
+        showScene(7);
+
+    },1200);
+
+}
+
+}
+function fireworks(){
+
+    for(let i=0;i<80;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="pixel-heart";
+
+        heart.style.left=(window.innerWidth/2)+"px";
+        heart.style.top=(window.innerHeight/2)+"px";
+
+        heart.style.setProperty("--x",
+            (Math.random()*900-450)+"px"
+        );
+
+        heart.style.setProperty("--y",
+            (Math.random()*700-350)+"px"
+        );
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },1600);
+
+    }
 
 }
