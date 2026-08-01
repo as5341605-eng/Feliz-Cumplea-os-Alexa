@@ -1,96 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Earth-18</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-
 </head>
 
-<body class="birthday">
+<body class="game">
 
-<div class="city"></div>
+<!-- Fondo -->
+<div class="sky">
+    <div class="moon"></div>
+    <div class="stars"></div>
+</div>
 
-<div class="particles"></div>
+<!-- Ciudad -->
+<div class="city">
+    <div class="building b1"></div>
+    <div class="building b2"></div>
+    <div class="building b3"></div>
+    <div class="building b4"></div>
+    <div class="building b5"></div>
+</div>
 
-<section class="hero2">
+<!-- Personaje -->
+<div id="hero">
 
-<h1 class="pixel">
+🕷️
 
-🎂
+</div>
+
+<!-- Pantalla 1 -->
+
+<section id="scene1" class="scene active">
+
+<h1>
+
+FELIZ CUMPLEAÑOS
 
 </h1>
 
 <h2>
 
-Feliz Cumpleaños
+ALEXA
 
 </h2>
 
-<h1 class="name">
-
-Alexa
-
-</h1>
-
-<p class="subtitle">
+<p>
 
 Bienvenida a Earth-18
 
 </p>
 
-<button id="next">
+<button id="startGame">
 
-Continuar →
+COMENZAR
 
 </button>
 
 </section>
 
-<section id="scene2" class="hidden">
+<!-- Pantalla 2 -->
 
-<h2 class="big">
+<section id="scene2" class="scene">
 
-Existen millones de universos...
+<h1>
 
-</h2>
+Existen millones
 
-</section>
+de universos...
 
-<section id="scene3" class="hidden">
-
-<h2 class="big">
-
-Cada uno cuenta una historia diferente...
-
-</h2>
+</h1>
 
 </section>
 
-<section id="scene4" class="hidden">
+<!-- Pantalla 3 -->
 
-<h2 class="love">
+<section id="scene3" class="scene">
+
+<h1>
+
+Cada uno cuenta
+
+una historia
+
+diferente...
+
+</h1>
+
+</section>
+
+<!-- Pantalla 4 -->
+
+<section id="scene4" class="scene">
+
+<h1>
 
 Pero hay algo...
 
-que nunca cambia.
-
-</h2>
+</h1>
 
 </section>
 
-<section id="scene5" class="hidden">
+<!-- Pantalla 5 -->
 
-<h1 class="loveFinal">
+<section id="scene5" class="scene">
+
+<h1>
 
 ❤️
 
@@ -114,60 +136,81 @@ los universos.
 
 </h2>
 
-<button id="continue2">
+</section>
 
-Continuar
+<!-- Pantalla 6 -->
 
-</button>
+<section id="scene6" class="scene">
+
+<h1>
+
+LEVEL 18
+
+</h1>
+
+<h2>
+
+UNLOCKED
+
+</h2>
+
+<p>
+
+Nueva aventura desbloqueada
+
+</p>
 
 </section>
 
-<script>
+<!-- Pantalla 7 -->
 
-const next=document.getElementById("next");
+<section id="scene7" class="scene">
 
-const continue2=document.getElementById("continue2");
+<div class="gift">
 
-next.onclick=()=>{
+🎁
 
-document.querySelector(".hero2").style.display="none";
+</div>
 
-document.getElementById("scene2").style.display="flex";
+<h2>
 
-setTimeout(()=>{
+Abrir regalo
 
-scene2.style.display="none";
+</h2>
 
-scene3.style.display="flex";
+</section>
 
-},3500);
+<!-- Pantalla Final -->
 
-setTimeout(()=>{
+<section id="scene8" class="scene">
 
-scene3.style.display="none";
+<h1>
 
-scene4.style.display="flex";
+🎂
 
-},7000);
+</h1>
 
-setTimeout(()=>{
+<h2>
 
-scene4.style.display="none";
+Feliz Cumpleaños Alexa
 
-scene5.style.display="flex";
+</h2>
 
-},10500);
+<p>
 
-}
+Que este nuevo nivel
 
-continue2.onclick=()=>{
+esté lleno de aventuras,
 
-alert("Aquí comenzará la siguiente aventura 🚀");
+personas increíbles
 
-}
+y momentos inolvidables.
 
-</script>
+</p>
+
+</section>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
