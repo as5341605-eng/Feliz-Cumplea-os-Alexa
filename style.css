@@ -325,3 +325,50 @@ transform:scale(1);
 }
 
 }
+/* HUD */
+
+.hud{
+
+position:fixed;
+
+top:15px;
+
+left:0;
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+padding:0 25px;
+
+z-index:999;
+
+font-family:'Press Start 2P',cursive;
+
+font-size:14px;
+
+color:#fff;
+
+text-shadow:0 0 10px #ff2d7a;
+
+}
+
+.logo{
+
+color:#00ffe5;
+
+}
+
+.level{
+
+color:#ffd93d;
+
+}
+
+.life{
+
+color:#ff5078;
+
+}
