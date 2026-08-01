@@ -1,62 +1,327 @@
-const boot=document.getElementById("boot");
-const enter=document.getElementById("enter");
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-const messages=[
+body.game{
+background:#090611;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+color:white;
+height:100vh;
+}
 
-"INITIALIZING...",
+/* Fondo */
 
-"CONNECTING MULTIVERSE...",
+.sky{
+position:fixed;
+width:100%;
+height:100%;
+background:linear-gradient(#070513,#13082d,#090611);
+overflow:hidden;
+}
 
-"SEARCHING EARTH...",
+/* Estrellas */
 
-"EARTH - 18 FOUND"
+.stars{
+position:absolute;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(white 1px,transparent 1px);
+background-size:30px 30px;
+opacity:.45;
+animation:starsMove 40s linear infinite;
+}
 
-];
+@keyframes starsMove{
 
-let index=0;
+from{
+transform:translateY(0);
+}
 
-function showMessage(){
+to{
+transform:translateY(400px);
+}
 
-if(index<messages.length){
+}
 
-boot.innerHTML=messages[index];
+/* Luna */
 
-boot.classList.add("glitch");
+.moon{
 
-setTimeout(()=>{
+position:absolute;
 
-boot.classList.remove("glitch");
+right:80px;
 
-index++;
+top:60px;
 
-setTimeout(showMessage,1200);
+width:120px;
 
-},500);
+height:120px;
 
-}else{
+border-radius:50%;
 
-enter.style.display="block";
+background:#fff8c6;
+
+box-shadow:0 0 45px #fff3a0;
+
+}
+
+/* Ciudad */
+
+.city{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+
+height:220px;
+
+display:flex;
+
+align-items:flex-end;
+
+justify-content:space-evenly;
+
+}
+
+.building{
+
+background:#111;
+
+border-top:4px solid #ff2d7a;
+
+box-shadow:0 0 15px #ff2d7a;
+
+}
+
+.b1{
+
+width:80px;
+height:180px;
+
+}
+
+.b2{
+
+width:120px;
+height:140px;
+
+}
+
+.b3{
+
+width:90px;
+height:210px;
+
+}
+
+.b4{
+
+width:150px;
+height:170px;
+
+}
+
+.b5{
+
+width:100px;
+height:200px;
+
+}
+
+/* Ventanas */
+
+.building::before{
+
+content:"";
+
+display:block;
+
+margin:10px auto;
+
+width:60%;
+
+height:80%;
+
+background:
+
+repeating-linear-gradient(
+
+to bottom,
+
+#ffd93d 0 8px,
+
+transparent 8px 16px
+
+);
+
+opacity:.8;
+
+}
+
+/* Personaje */
+
+#hero{
+
+position:absolute;
+
+bottom:210px;
+
+left:-80px;
+
+font-size:50px;
+
+animation:walk 12s linear infinite;
+
+filter:drop-shadow(0 0 12px #ff2d7a);
+
+}
+
+@keyframes walk{
+
+0%{
+
+left:-80px;
+
+}
+
+100%{
+
+left:110%;
 
 }
 
 }
 
-showMessage();
+/* Escenas */
 
-enter.onclick=()=>{
+.scene{
 
-document.body.style.transition="1s";
+position:absolute;
 
-document.body.style.background="#000";
+width:100%;
 
-boot.innerHTML="Opening Portal...";
+height:100vh;
 
-enter.style.display="none";
+display:none;
 
-setTimeout(()=>{
+justify-content:center;
 
-window.location.href="birthday.html";
+align-items:center;
 
-},2500);
+flex-direction:column;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.active{
+
+display:flex;
+
+animation:fade .8s;
+
+}
+
+.scene h1{
+
+font-family:'Press Start 2P',cursive;
+
+font-size:38px;
+
+line-height:60px;
+
+text-shadow:0 0 20px #ff2d7a;
+
+}
+
+.scene h2{
+
+margin-top:20px;
+
+font-size:40px;
+
+}
+
+.scene p{
+
+margin-top:20px;
+
+font-size:22px;
+
+max-width:700px;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:18px 45px;
+
+font-size:18px;
+
+background:#ff2d7a;
+
+color:white;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+.gift{
+
+font-size:90px;
+
+animation:bounce 1.5s infinite;
+
+cursor:pointer;
+
+}
+
+@keyframes bounce{
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.95);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
 
 }
