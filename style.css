@@ -1,0 +1,93 @@
+body{
+margin:0;
+padding:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#050816,#111827,#000);
+color:white;
+overflow-x:hidden;
+}
+
+.hero,
+#story,
+#end{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:30px;
+text-align:center;
+}
+
+.hero h1{
+font-size:80px;
+margin:0;
+animation:float 3s infinite;
+}
+
+.hero h2{
+font-size:35px;
+margin-top:10px;
+}
+
+.hero p{
+max-width:700px;
+font-size:20px;
+opacity:.9;
+}
+
+button{
+padding:15px 40px;
+border:none;
+border-radius:40px;
+background:#e11d48;
+color:white;
+font-size:18px;
+cursor:pointer;
+margin-top:30px;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ff2b63;
+}
+
+.hidden{
+display:none;
+}
+
+.letter{
+max-width:800px;
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+line-height:2;
+font-size:18px;
+}
+
+#end h2{
+font-size:42px;
+}
+
+#end h3{
+font-size:28px;
+color:#ff4f7a;
+}
+
+.overlay{
+position:fixed;
+width:100%;
+height:100%;
+background-image:radial-gradient(white 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.12;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
