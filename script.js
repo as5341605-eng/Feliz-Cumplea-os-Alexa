@@ -78,8 +78,6 @@ giftBtn.onclick = ()=>{
     },1200);
 
 }
-
-}
 function fireworks(){
 
     for(let i=0;i<80;i++){
